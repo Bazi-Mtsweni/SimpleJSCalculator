@@ -7,6 +7,7 @@
 }
 
 body{
+    overflow-x: hidden;
     padding: 0;
     margin: 0;
     background: linear-gradient(to right, #00AAFF, #00FF6C);
@@ -69,4 +70,36 @@ footer{
 }
 footer p{
     font-size: 1.2rem;
+}
+
+@media screen and (max-width: 450px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    .calculator-grid{
+        width: 40%;
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows:  minmax(100px, auto) repeat(5, 80px);
+    }
+    .calculator-grid > button{
+        font-size: 1.4rem;
+    }
+    footer {
+        height: 2vh;
+    }
+    footer p{
+        font-size: .8rem;
+    }
+}
+
+@media (min-width: 318px) and (max-width: 419px) {
+    .calculator-grid{
+        width: 40%;
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows:  minmax(100px, auto) repeat(5, 60px);
+    }
 }
